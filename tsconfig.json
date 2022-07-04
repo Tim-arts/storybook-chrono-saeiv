@@ -1,0 +1,44 @@
+/* To learn more about this file see: https://angular.io/config/tsconfig. */
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "noImplicitReturns": false,
+    "noFallthroughCasesInSwitch": true,
+    "sourceMap": true,
+    "declaration": false,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "isolatedModules": false,
+    "importHelpers": true,
+    "target": "es2018",
+    "module": "es2020",
+    "jsx": "react",
+    "lib": [
+      "es2018",
+      "dom"
+    ],
+    "typeRoots": [
+      "node_modules/@types/"
+    ],
+    "paths": {
+      "@angular/*": ["./node_modules/@angular/*"],
+      "@ngx-chrono-ui-kit/core": ["../ngx-chrono-ui-kit/projects/core"]
+    }
+  },
+  "include": [
+    "./src/**/*.@(ts|tsx)",
+    "./.storybook/**.ts"
+  ],
+  "exclude": [
+    "./public"
+  ],
+  "files": [
+    "./modules.ts"
+  ]
+}

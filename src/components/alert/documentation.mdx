@@ -1,0 +1,48 @@
+import { Meta } from '@storybook/addon-docs';
+import { AlertComponent } from '@ngx-chrono-ui-kit/core';
+
+<Meta title="Components/Alert/Documentation" component={AlertComponent}/>
+
+# Toast documentation
+
+In order to create a toast, you'll need to use the corresponding service into the component from which you want to use it. Here is an example:
+
+`HTML`
+```
+<button type='button' (click)="click()">Create toast!</button>
+```
+
+`TS`
+```
+import { Component } from '@angular/core';
+import { ThemeService, ToastService, Alert } from '@ngx-chrono-ui-kit/core';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss']
+})
+export class AppComponent {
+
+  constructor(private toastService: ToastService) {}
+
+  click() {
+    const config: Alert = {
+      title: 'Default message',
+      toastOptions: {
+        allowsMultiple: true,
+        duration: 3000,
+        horizontalPosition: 'center',
+        limit: 0,
+        preventDuplicates: false,
+        verticalPosition: 'bottom',
+      },
+      content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.',
+    };
+    this.toastService.create(config, this);
+  }
+}
+
+```
+
+⚠ Note: the toast options shown above correspond to the `default` values.

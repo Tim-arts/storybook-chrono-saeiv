@@ -1,0 +1,81 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Pour commencer/Support" />
+
+# Support
+
+### Issues:
+- `inject() must be called from an injection context ` --> Référence au NPM pas à jour
+
+- `Module does not have a ɵmod property ` --> Référence au module manquant dans la story
+
+- `ngModule not found ` --> ng build le UI Kit pour s'assurer qu'il n'y ait aucune de sa provenance
+
+- `E401 - Unable to authenticate, your authentication token seems to be invalid `, pour régler ce problème vous pouvez tenter deux résolutions :
+  - supprimer le  `package-lock.json`, le dossier  `node_modules` et lancer  `npm install`,
+  - exécuter : `vsts-npm-auth -config .npmrc -F`
+
+- Affiche la page d'accueil lors d'un changement de contrôle --> CTRL + F5
+
+- La page "blink" lors d'un changement de contrôle --> CTRL + F5
+
+- Component is neither 'ComponentType' or 'DirectiveType' --> Rouler la commande 'npm ci'
+
+- Les stories ne se mettent plus à jour lors d'un changement dans le code --> Supprimer les fichiers compilés autogénérés (.js / .jsx) qui servent de cache
+
+- eslint error: Error: Cannot read config file: C:\git_td\ngx-chrono-ui-kit\projects\eslint-config\node_modules\eslint-config-google\index.js
+--> the node_modules folders located inside the libraries (`eslint-config`, `prettier-config`, `stylelint-config`) are corrupted and need to be reinstalled (`npm i`)
+
+### Tips:
+
+#### 1) Passing additional props in story:
+```
+props: {
+  icon: {
+    text: Metadata.storyData.defaultIcons.text,
+    fab: Metadata.storyData.defaultIcons.fab
+  },
+  ...args
+}
+```
+
+
+
+In story:
+```
+export const Button = {
+  render: (args: Metadata.Interface) => ({
+    props: {
+      ...args
+    },
+    template: `
+      <ui-kit-button
+        [textContent]="type | titlecase" // here
+        (click)="icon?.action()" // here
+      ></ui-kit-button>
+    `
+  })
+}
+```
+
+in metadata:
+```
+export const ControlsDefaultValues: Interface = {
+  ...
+  type: 'elevated',
+  icon: {
+    fontIcon: 'add',
+    'action': () => { return alert('Add icon clicked!') }
+  },
+  ...
+}
+```
+
+#### 2) Story folder
+
+`Component title` and `story title` have to be identical
+
+```
+  title: 'Components/Button/Buttons'
+export const Buttons = {...}
+```
