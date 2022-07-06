@@ -19,7 +19,7 @@ you have to install your folders inside the same folder:
 its [dedicated](https://dev.azure.com/projetsrtm/EXO%20UI%20Kit/_git/ngx-chrono-ui-kit?path=/projects/core)
 documentation.
 
-Run `npm run local` to start the local server. The default port is [6006](http://localhost:6006), the app will launch
+Run `npm run start-storybook` to start the local server. The default port is [6006](http://localhost:6006), the app will launch
 the webpage automatically and reload if you change any source files.
 
 ## Production development
@@ -37,3 +37,10 @@ Run `npm run build-storybook` to build the project. The build artifacts will be 
 ## Update Chromatic
 
 To update Storybook online hosted on [Chromatic](https://www.chromatic.com/), you need to run `npm run chromatic`
+
+## .ENV File
+The project would need a .env file with the corresponding content:
+```
+STORYBOOK_FIGMA_ACCESS_TOKEN=<token>
+CHROMATIC_PROJECT_TOKEN=<token>
+```
