@@ -19,7 +19,7 @@ you have to install your folders inside the same folder:
 its [dedicated](https://dev.azure.com/projetsrtm/EXO%20UI%20Kit/_git/ngx-chrono-ui-kit?path=/projects/core)
 documentation.
 
-Run `npm run local` to start the local server. The default port is [6006](http://localhost:6006), the app will launch
+Run `npm run start-storybook` to start the local server. The default port is [6006](http://localhost:6006), the app will launch
 the webpage automatically and reload if you change any source files.
 
 ## Production development

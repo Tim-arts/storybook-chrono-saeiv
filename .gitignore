@@ -157,3 +157,6 @@ documentation.json
 
 # Jest
 .jest-test-results.json
+
+# Env
+.env
