@@ -37,3 +37,10 @@ Run `npm run build-storybook` to build the project. The build artifacts will be 
 ## Update Chromatic
 
 To update Storybook online hosted on [Chromatic](https://www.chromatic.com/), you need to run `npm run chromatic`
+
+## .ENV File
+The project would need a .env file with the corresponding content:
+```
+STORYBOOK_FIGMA_ACCESS_TOKEN=<token>
+CHROMATIC_PROJECT_TOKEN=<token>
+```
